@@ -1,8 +1,5 @@
 ---
 ideas:
-- title: HEY
-  description: working? YES!!!!
-- :title: ideas?
-  :descripton: "can you see me? can you?\r\n"
-- title: smarts
-  description: getting them still?
+- title: greet people
+  description: "be nice and say hello\r\n"
+  rank: 1
