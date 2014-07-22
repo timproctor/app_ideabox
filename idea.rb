@@ -13,6 +13,7 @@ class Idea
     end
   end
 
+
   attr_reader :title, :description
 
   def initialize(title, description)
@@ -33,5 +34,11 @@ class Idea
 
   def database
     Idea.database
+  end
+  
+  def self.delete(position)
+    database.transaction do
+      database['ideas'].delete_at(position)
+    end
   end
 end
