@@ -2,17 +2,17 @@ require 'yaml/store'
 
 class IdeaStore
   def self.database
-    @database ||= YAML::Store.new "ideabox"
+    @database ||= YAML::Store.new('db/ideabox')
   end
 
   def self.all
     raw_ideas.map do |data|
-      IdeaStore.new(data)
+      Idea.new(data)
     end
   end
 
   def self.find(id)
-    IdeaStore.new(find_raw_idea(id))
+    Idea.new(find_raw_idea(id))
   end
 
   def self.find_raw_idea(id)
