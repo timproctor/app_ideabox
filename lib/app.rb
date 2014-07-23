@@ -13,7 +13,6 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    @client     = Twilio::REST::Client.new account_sid, auth_token
     haml :index, locals: {ideas: IdeaStore.all, idea: Idea.new}
   end
 
