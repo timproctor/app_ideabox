@@ -39,7 +39,7 @@ class Idea
 
     #save body of text as description
     @client.account.messages.list.each do |message|
-      IdeaStore.create(message)
+      IdeaStore.create(message.to_s)
     end
   end
 
