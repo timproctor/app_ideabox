@@ -21,12 +21,6 @@ class IdeaBoxApp < Sinatra::Base
     redirect '/'
   end
 
-  get '/sms' do
-
-    throw IdeaStore.create(params[:idea])
-    redirect '/'
-  end
-
   post '/:id/like' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.like!
