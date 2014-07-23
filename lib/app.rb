@@ -39,6 +39,10 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/sms-quickstart' do
+    puts "ENV: #{env.inspect}"
+    puts "-" * 1000
+    puts "PARAMS: #{params.inspect}"
+
     twiml = Twilio::TwiML::Response.new do |r|
       r.Message "Thanks for noticing!"
     end
