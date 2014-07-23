@@ -30,4 +30,17 @@ class Idea
     other.rank <=> rank
   end
 
+  def sms_as_idea(data)
+    #get sms
+    account_sid = 'ACb6d1d1bdbd8b4a3d7e33146a3ca2b3a2'
+    auth_token  = '{{9a9b2a5fbc1373b5a338309cacc7fb6d}}'
+    @client = Twilio::REST::Client.new account_sid, auth_token
+    #set default title
+
+    #save body of text as description
+    @client.account.messages.list.each do |message|
+      IdeaStore.create(message)
+    end
+  end
+
 end
