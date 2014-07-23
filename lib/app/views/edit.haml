@@ -1,0 +1,12 @@
+%html
+  %body
+    %h1 IdeaBox
+    %form{:action => "/#{id}", :method => "POST"}
+      %p
+        Edit your Idea:
+      %input{:name => "_method", :type => "hidden", :value => "PUT"}
+      %input{:name => "idea[title]", :type => "text", :value => idea.title}
+      %br
+      %textarea{:name => "idea[description]"}= idea.description
+      %br
+      %input{:type => "submit"}

@@ -3,17 +3,17 @@ require 'idea_box'
 class IdeaBoxApp < Sinatra::Base
   set :method_override, true
   set :root, 'lib/app'
-  
+
   configure :development do
     register Sinatra::Reloader
   end
 
   not_found do
-    erb :error
+    haml :error
   end
 
   get '/' do
-    erb :index, locals: {ideas: IdeaStore.all, idea: Idea.new}
+    haml :index, locals: {ideas: IdeaStore.all, idea: Idea.new}
   end
 
   post '/' do
@@ -28,7 +28,7 @@ class IdeaBoxApp < Sinatra::Base
 
   get '/:id/edit' do |id|
     idea = IdeaStore.find(id.to_i)
-    erb :edit, locals: {id: id, idea: idea}
+    haml :edit, locals: {id: id, idea: idea}
   end
 
   put '/:id' do |id|
