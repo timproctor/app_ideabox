@@ -38,6 +38,13 @@ class IdeaBoxApp < Sinatra::Base
     haml :edit, locals: {id: id, idea: idea}
   end
 
+  post '/sms-quickstart' do
+  twiml = Twilio::TwiML::Response.new do |r|
+    r.Message "Hey Monkey. Thanks for the message!"
+  end
+  twiml.text
+  end
+
   put '/:id' do |id|
     IdeaStore.update(id.to_i, params[:idea])
     redirect '/'
