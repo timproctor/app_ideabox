@@ -40,7 +40,7 @@ class IdeaBoxApp < Sinatra::Base
 
   post '/sms-quickstart' do
     twiml = Twilio::TwiML::Response.new do |r|
-      r.Message "Changed to changed!"
+      r.Message "Thanks for noticing!"
     end
     twiml.text
   end
