@@ -1,0 +1,15 @@
+  #content
+   %h3 Existing Ideas
+   %ul
+     - ideas.each_with_index do |idea, id|
+       %li
+         = idea.title
+         (#{id})
+         %br/
+         = idea.description
+         %form{:action => "/#{id}/like", :method => "POST", :style => "display: inline"}
+         %input{:type => "submit", :value => "+"}
+         %a{:href => "/#{id}/edit"} Edit
+         %form{:action => "/#{id}", :method => "POST"}
+         %input{:name => "_method", :type => "hidden", :value => "DELETE"}
+         %input{:type => "submit", :value => "delete"}

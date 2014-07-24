@@ -13,24 +13,28 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   get '/' do
-    haml :index, locals: {ideas: IdeaStore.all, idea: Idea.new}
+    haml :index
   end
 
-  post '/' do
+  get '/ideas' do
+    haml :ideas, locals: {ideas: IdeaStore.all.sort, idea: Idea.new}
+  end
+
+  post '/ideas' do
     IdeaStore.create(params[:idea])
-    redirect '/'
+    redirect to ('/ideas')
   end
 
   post '/:id/like' do |id|
     idea = IdeaStore.find(id.to_i)
     idea.like!
     IdeaStore.update(id.to_i, idea.to_h)
-    redirect '/'
+    redirect to ('/ideas')
   end
 
   delete '/:id' do |id|
     IdeaStore.delete(id.to_i)
-    redirect '/'
+    redirect ('/ideas')
   end
 
   get '/:id/edit' do |id|
@@ -44,6 +48,6 @@ class IdeaBoxApp < Sinatra::Base
 
   put '/:id' do |id|
     IdeaStore.update(id.to_i, params[:idea])
-    redirect '/'
+    redirect to ('/ideas')
   end
 end
