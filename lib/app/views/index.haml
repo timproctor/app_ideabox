@@ -1,12 +1,7 @@
 %html
   #header
     %h1 IdeaBox
-    %form{:action => "/", :method => "POST"}
-      %p
-        Your Idea:
-      %input{:name => "idea[title]", :type => "text"}
-      %br
-      %textarea{:name => "idea[description]"}
-      %br
-      %input{:type => "submit"}
-  
+  #button
+    %ul
+      %li
+        %a{:href => "/ideas"} Got An Idea?
