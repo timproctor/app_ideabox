@@ -1,3 +1,4 @@
+.inner
 %h3 Existing Ideas
 %ul
 - ideas.each_with_index do |idea, id|
@@ -5,12 +6,12 @@
     = idea.title
     (#{id})
     = idea.description
-    %form{:action => "/#{id}/like", :method => "POST", :style => "display: inline"}
-      %input{:type => "submit", :value => "+"}
+    %form{:action => "/#{id}/like", :method => "POST", :style => "display: inline", :class =>'form-group', :role =>'form'}
+      %input{:type => "submit", :value => "+", :class => "form-control"}
         %a{:href => "/#{id}/edit"} Edit
-    %form{:action => "/#{id}", :method => "POST"}
-      %input{:name => "_method", :type => "hidden", :value => "DELETE"}
-        %input{:type => "submit", :value => "delete"}
+    %form{:action => "/#{id}", :method => "POST", :class =>'form-group', :role =>'form'}
+      %input{:name => "_method", :type => "hidden", :value => "DELETE", :class => "form-control"}
+        %input{:type => "submit", :value => "delete", :class => "btn btn-lg btn-success"}
 %a{:href => "/ideas"} Got Another Idea?
 %br
 %a{:href => "/"} Home Please

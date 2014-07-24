@@ -1,8 +1,9 @@
-%form{:action => "/ideas", :method => "POST"}
-  %p
-    Your Idea:
-  %input{:name => "idea[title]", :type => "text"}
-  %br
-  %textarea{:name => "idea[description]"}
-  %br
-  %input{:type => "submit"}
+%form{:action => "/ideas", :method => "POST", :class =>'form-group', :role =>'form'}
+  .inner
+    %p
+      Your Idea:
+    %input{:name => "idea[title]", :type => "text", :class => "form-control"}
+    %br
+    %textarea{:name => "idea[description]", :class => "form-control"}
+    %br
+    %input{:type => "submit", :class => "btn btn-lg btn-success"}

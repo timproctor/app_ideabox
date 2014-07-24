@@ -1,4 +1,4 @@
-%form{:action => "/#{idea.id}", :method => "POST"}
+%form{:action => "/#{idea.id}", :method => "POST", :class =>'form-group', :role =>'form'}
   %p
     - if idea.id
       Edit your Idea:
@@ -6,8 +6,8 @@
       Your Idea:
   - if idea.id
     %input{:name => "_method", :type => "hidden", :value => "PUT"}
-  %input{:name => "idea[title]", :type => "text", :value => idea.title}
+  %input{:name => "idea[title]", :type => "text", :value => idea.title, :class => "form-control"}
   %br
   %textarea{:name => "idea[description]"}= idea.description
   %br
-  %input{:type => "submit"}
+  %input{:type => "submit", :class => "btn btn-lg btn-success"}
