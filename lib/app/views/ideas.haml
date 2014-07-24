@@ -1,9 +1,8 @@
-#forms
-  %form{:action => "/ideas", :method => "POST"}
-    %p
-      Your Idea:
-    %input{:name => "idea[title]", :type => "text"}
-    %br
-    %textarea{:name => "idea[description]"}
-    %br
-    %input{:type => "submit"}
+%form{:action => "/ideas", :method => "POST"}
+  %p
+    Your Idea:
+  %input{:name => "idea[title]", :type => "text"}
+  %br
+  %textarea{:name => "idea[description]"}
+  %br
+  %input{:type => "submit"}
