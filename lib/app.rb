@@ -54,4 +54,10 @@ class IdeaBoxApp < Sinatra::Base
     IdeaStore.update(id.to_i, params[:idea])
     redirect to ('/archives')
   end
+
+  helpers do
+    def format_idea_title(idea, id)
+      "#{idea.title} (#{id}) #{idea.description}"
+    end
+  end
 end

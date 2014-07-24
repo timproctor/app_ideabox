@@ -1,0 +1,7 @@
+= format_idea_title(idea, id)
+%form{:action => "/#{id}/like", :method => "POST", :style => "display: inline", :class =>'form-group', :role =>'form'}
+  %input{:type => "submit", :value => "+", :class => "form-control"}
+    %a{:href => "/#{id}/edit"} Edit
+%form{:action => "/#{id}", :method => "POST", :class =>'form-group', :role =>'form'}
+  %input{:name => "_method", :type => "hidden", :value => "DELETE", :class => "form-control"}
+    %input{:type => "submit", :value => "delete", :class => "btn btn-lg btn-success"}
