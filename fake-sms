@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo SENDING REQUEST
+curl -v localhost:9292/sms-quickstart -d Body="$*"
+
+echo AFTER
+cat db/ideabox | tail -10
