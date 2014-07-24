@@ -1,7 +1,12 @@
 #!/bin/sh
 
 echo SENDING REQUEST
-curl -v localhost:9292/sms-quickstart -d Body="$*"
+
+# to heroku
+curl -v http://shrouded-refuge-8330.herokuapp.com/sms-quickstart -d Body="$*"
+
+# locally
+# curl -v localhost:9292/sms-quickstart -d Body="$*"
 
 echo AFTER
 cat db/ideabox | tail -10
