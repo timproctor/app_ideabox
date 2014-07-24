@@ -1,0 +1,19 @@
+ #wrapper{
+    width:66%;
+    margin:auto;
+  }
+  #header>h1{
+    font-size:200%;
+  }
+  li{
+    color:white;
+    text-align:center;
+    display:inline;
+    padding:5px 10px 0 10px;
+    margin-right:2px;
+    background-color: #69a;
+  }
+  #content{
+    margin:12px 0;
+    float:left;
+  }
