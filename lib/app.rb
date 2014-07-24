@@ -39,12 +39,7 @@ class IdeaBoxApp < Sinatra::Base
   end
 
   post '/sms-quickstart' do
-    IdeaStore.create('title'       => params["FromCity"],
-                     'description' => params["Body"])
-    # twiml = Twilio::TwiML::Response.new do |r|
-    #   r.Message "Thanks for noticing!"
-    # end
-    # twiml.text
+    IdeaStore.create('title'=>params["FromCity"],'description'=>params["Body"])
   end
 
   put '/:id' do |id|
