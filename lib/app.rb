@@ -8,8 +8,6 @@ class IdeaBoxApp < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  set :haml, :format => :html5
-
   not_found do
     haml :error
   end
