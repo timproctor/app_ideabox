@@ -1,32 +1,11 @@
 ---
 ideas:
-- title: diet
-  description: eat whatever, in moderation
-  rank: 1
-- title: education
-  description: don't ever stop learning!
-- title: personal
-  description: be good to yourself
-  rank: 32
-- title: abc
-  description: def
-- :title: example
-  :description: 
-- title: example
-  description: 
-- title: example
-  description: thebody
-- title: example
-  description: thebody
-- title: example
-  description: thebody
-- title: example
-  description: omg
-- title: example
-  description: oh mah god
 - title: example
   description: ''
+  rank: 23
 - title: example
   description: 087643
+  rank: 2
 - title: example
   description: hello heroku
+  rank: 1
